@@ -6,21 +6,11 @@ pub fn verse(n: u32) -> String {
     } else if n == 0 {
         return String::from("No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n");
     } else {
-        let n_str = n.to_string();
-        let part1 = " bottles of beer on the wall, ".to_owned();
-        let part2 = " bottles of beer.\nTake one down and pass it around, ".to_owned();
-        let nm1_str = (n - 1).to_string();
-        let part3 = " bottles of beer on the wall.\n";
-
-        let mut ans = String::new();
-        ans.push_str(&n_str);
-        ans.push_str(&part1);
-        ans.push_str(&n_str);
-        ans.push_str(&part2);
-        ans.push_str(&nm1_str);
-        ans.push_str(&part3);
-
-        return ans;
+        return format!(
+            "{0} bottles of beer on the wall, {0} bottles of beer.\nTake one down and pass it around, {1} bottles of beer on the wall.\n",
+            n,
+            n - 1
+        );
     }
 }
 
