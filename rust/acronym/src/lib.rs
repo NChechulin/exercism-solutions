@@ -1,5 +1,5 @@
 pub fn abbreviate(phrase: &str) -> String {
-    let words: Vec<&str> = phrase.split(|c: char| !c.is_alphabetic()).collect();
+    let words: Vec<&str> = phrase.split(|c: char| c != '\'' && !c.is_alphabetic()).collect();
     let first_letters: String = words
         .iter()
         .map(|word| word.chars().next().unwrap())
