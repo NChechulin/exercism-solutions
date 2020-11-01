@@ -9,10 +9,6 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
             digits.push(10);
         }
     }
- 
-    for i in &digits {
-        print!("{} ", i);
-    }
 
     if digits.len() != 10 {
         return false;
@@ -26,4 +22,3 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
 
     sum % 11 == 0
 }
- 
