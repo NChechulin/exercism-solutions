@@ -1,9 +1,6 @@
 pub fn primes_up_to(upper_bound: u64) -> Vec<u64> {
     let mut sift: Vec<bool> = vec![true; (upper_bound + 2) as usize];
     let mut ans: Vec<u64> = vec![];
-    // Mark 0 and 1 as non-prime numbers
-    sift[0] = false;
-    sift[1] = false;
 
     for i in 2..(upper_bound + 1) {
         if sift[i as usize] {
