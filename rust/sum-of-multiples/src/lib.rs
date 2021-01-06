@@ -14,10 +14,5 @@ pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
         }
     }
 
-    let mut ans: u32 = 0;
-
-    for multiple in multiples {
-        ans += multiple;
-    }
-    ans
+    multiples.iter().sum()
 }
