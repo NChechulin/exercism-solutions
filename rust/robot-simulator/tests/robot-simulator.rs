@@ -143,10 +143,3 @@ fn follow_instructions_to_move_east_and_north() {
     assert_eq!((11, 5), robot.position());
     assert_eq!(&Direction::North, robot.direction());
 }
-
-#[test]
-fn test_3_rots() {
-    let r1 = Robot::new(0, 0, Direction::East).instructions("LA");
-    let r2 = Robot::new(0, 0, Direction::North).instructions("R");
-    assert_eq!(r1.position(), (0, 1));
-}
