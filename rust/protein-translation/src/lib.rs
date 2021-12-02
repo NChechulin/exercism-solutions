@@ -31,11 +31,5 @@ impl<'a> CodonsInfo<'a> {
 }
 
 pub fn parse<'a>(pairs: Vec<(&'a str, &'a str)>) -> CodonsInfo<'a> {
-    let mut codon_names: HashMap<&'a str, &'a str> = HashMap::new();
-
-    for (codon, name) in pairs {
-        codon_names.insert(codon, name);
-    }
-
-    CodonsInfo { codon_names }
+    CodonsInfo { codon_names: pairs.iter().cloned().collect() }
 }
