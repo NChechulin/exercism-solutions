@@ -7,10 +7,7 @@ pub struct CodonsInfo<'a> {
 
 impl<'a> CodonsInfo<'a> {
     pub fn name_for(&self, codon: &str) -> Option<&'a str> {
-        match self.codon_names.get(&codon) {
-            Some(name) => Some(name),
-            None => None,
-        }
+        self.codon_names.get(&codon).cloned()
     }
 
     pub fn of_rna(&self, rna: &str) -> Option<Vec<&'a str>> {
